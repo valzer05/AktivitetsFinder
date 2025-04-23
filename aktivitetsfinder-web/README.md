@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+AktivitetsFinder
 
-## Getting Started
+Aggregator of kid‑friendly activities across Denmark, built with Next.js & Supabase
 
-First, run the development server:
+🚀 Product Vision
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+A single, intuitive hub where parents in Denmark (kids 0‑18 y/o) can discover the best activities in their city and jump straight to the organiser’s booking page.  Filters for city, child age and price range plus an AI helper that suggests the ideal activity.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🥇 MVP Scope
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Live activity list refreshed nightly.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Filters – city · age · price.
 
-## Learn More
+Outbound click‑through to the provider’s landing page.
 
-To learn more about Next.js, take a look at the following resources:
+🏗️ Tech Stack (v0)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Layer
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Choice
 
-## Deploy on Vercel
+Why
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Front‑end + API
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js 14 App Router
+
+SEO‑friendly SSR, file‑based routing, API routes.
+
+Styling
+
+Tailwind CSS
+
+Rapid prototyping, utility‑first.
+
+Database
+
+Supabase (Postgres)
+
+Free tier, SQL, auth, REST/GraphQL.
+
+Crawler
+
+Node script + Cheerio / playwright‑crawler
+
+Lightweight scraping.
+
+Hosting
+
+Vercel Hobby
+
+Auto‑deploy from GitHub.
+
+🛠️ Getting Started (local)
+
+# prerequisites: Node 20 LTS, npm, git installed
+
+# clone the repo
+ git clone https://github.com/<your‑user>/AktivitetsFinder.git
+ cd AktivitetsFinder
+
+# create the Next.js app (only once)
+ npx create-next-app@latest web --typescript --eslint --tailwind --src-dir --app --import-alias "@/*"
+
+# run locally
+ cd web
+ npm run dev
+# visit http://localhost:3000
+
+📂 Project Structure (after first commit)
+
+AktivitetsFinder/
+├─ web/            # Next.js front‑end & API routes
+│  ├─ src/
+│  └─ ...
+├─ crawler/        # Node scrapers (MVP: one file per source)
+├─ README.md
+└─ .gitignore
+
+🗺️ Roadmap (high level)
+
+Phase 1 – Hello World skeleton & Supabase connection
+
+Phase 2 – Crawler for 1 public data source
+
+Phase 3 – Listing UI with filters
+
+Phase 4 – Ads & Analytics
+
+Phase 5 – Beta launch + user feedback
+
+📜 Licence
+
+MIT (to be confirmed)
+
